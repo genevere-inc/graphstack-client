@@ -39,8 +39,9 @@ module Graphstack
     # @param to [Array<String>] Phone numbers in E.164 format (for new conversations)
     # @param conversation_id [String] Existing conversation ID (for follow-ups)
     # @param content [String] Message content to send
+    # @param attachment_urls [Array<String>] URLs of images/media to attach
     # @return [Hash] Response with conversation_id, entry_id, etc.
-    def send_message(content:, to: nil, conversation_id: nil)
+    def send_message(content:, to: nil, conversation_id: nil, attachment_urls: nil)
       unless to || conversation_id
         return { error: true, message: "Either 'to' or 'conversation_id' is required" }
       end
@@ -48,7 +49,8 @@ module Graphstack
       response = @client.post("#{BASE_PATH}/send", {
         to: to,
         conversation_id: conversation_id,
-        content: content
+        content: content,
+        attachment_urls: attachment_urls
       }.compact)
 
       parse_send_response(response)
