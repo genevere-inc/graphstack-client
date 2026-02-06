@@ -7,7 +7,7 @@ Ruby client for Graphstack messaging API.
 Add to your Gemfile:
 
 ```ruby
-gem "graphstack-client", git: "https://github.com/your-org/graphstack-client.git"
+gem "graphstack-client", git: "https://github.com/genevere-inc/graphstack-client.git"
 ```
 
 ## Configuration

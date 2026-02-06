@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Ruby client for Graphstack messaging API"
   spec.description = "Client library for Graphstack messaging infrastructure"
-  spec.homepage = "https://github.com/your-org/graphstack-client"
+  spec.homepage = "https://github.com/genevere-inc/graphstack-client"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0"
 
