@@ -9,6 +9,7 @@ require_relative "graphstack/client"
 require_relative "graphstack/personagraph_client"
 require_relative "graphstack/rcs_client"
 require_relative "graphstack/email_client"
+require_relative "graphstack/app_chat_client"
 require_relative "graphstack/memos_client"
 require_relative "graphstack/webhook"
 

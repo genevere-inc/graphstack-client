@@ -27,6 +27,11 @@ module Graphstack
       @email ||= EmailClient.new(@client)
     end
 
+    # App chat gateway (in-app messaging, no external delivery)
+    def app_chat
+      @app_chat ||= AppChatClient.new(@client)
+    end
+
     # Future gateways:
     # def slack
     #   @slack ||= SlackClient.new(@client)
