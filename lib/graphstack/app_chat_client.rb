@@ -33,7 +33,7 @@ module Graphstack
     # @param from_name [String] Sender display name
     # @param from_id [String] Sender identifier
     # @return [Hash] Response with conversation_id, entry_id, etc.
-    def send_message(content:, to: nil, conversation_id: nil, role: "user", from_name: nil, from_id: nil)
+    def send_message(content:, to: nil, conversation_id: nil, role: "user", from_name: nil, from_id: nil, attachment_urls: nil)
       unless to.present? || conversation_id.present?
         return { error: true, message: "Either 'to' or 'conversation_id' is required" }
       end
@@ -44,7 +44,8 @@ module Graphstack
         content: content,
         role: role,
         from_name: from_name,
-        from_id: from_id
+        from_id: from_id,
+        attachment_urls: attachment_urls
       }.compact)
 
       parse_send_response(response)
